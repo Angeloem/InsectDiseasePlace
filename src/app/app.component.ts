@@ -9,6 +9,8 @@ import {DataToDisplay} from './models/display_data.model';
 })
 export class AppComponent implements OnInit {
   displayData: DataToDisplay[];
+  place: string;
+
   constructor(private service: AppService) {
   }
 
@@ -49,6 +51,9 @@ export class AppComponent implements OnInit {
       ]
     };
 
-    this.displayData = this.service.getDataForDisplay(placeValueData);
+    const dataFromService = this.service.getDataForDisplay(placeValueData);
+
+    this.displayData = dataFromService.data;
+    this.place = dataFromService.place;
   }
 }

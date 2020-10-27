@@ -6,7 +6,7 @@
       Place vs Data
     </th>
     <th>
-      Insect District
+      {{ place }}
     </th>
   </tr>
   <tr class="body" *ngFor="let data of displayData">
@@ -27,7 +27,7 @@
     </th>
   </tr>
   <tr class="body">
-    <td>Insect District</td>
+    <td>{{ place }}</td>
     <td *ngFor="let data of displayData">{{data.value}}</td>
   </tr>
 </table>
