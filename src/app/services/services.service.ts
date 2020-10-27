@@ -52,7 +52,9 @@ export class AppService {
         });
       });
     });
-    console.log(nameAndDimensionArr);
+
+    // sort the name and dimensions according to the value
+    nameAndDimensionArr.sort((firstValue, secondValue) => secondValue.value - firstValue.value);
     return nameAndDimensionArr;
   }
 }
