@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {DataToDisplay} from '../models/display_data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,7 @@ export class AppService {
   constructor() {
   }
 
-  getDataForDisplay(input) {
+  getDataForDisplay(input): any {
     // get the underlying data and the keys of the JSON object
     const dimensions = input.metaData.dimensions.dx;
     const names = input.metaData.names;
@@ -17,7 +16,6 @@ export class AppService {
       key: '',
       name: ''
     };
-    console.log(rows);
 
     // get the second value in inner row of the rows array
     rows.forEach((row) => {
@@ -30,8 +28,6 @@ export class AppService {
       if (namesKey === placeObject.key) {
         placeObject.name = names[namesKey];
       }
-      console.log(namesKey);
-      console.log(placeObject);
     }
 
 
@@ -77,11 +73,10 @@ export class AppService {
     // sort the name and dimensions according to the value
     nameAndDimensionArr.sort((firstValue, secondValue) => secondValue.value - firstValue.value);
 
-    // add the name of the place into the returned object
-    const finalData = {
+    // add the name of the place into the returned object and return it
+    return {
       place: placeObject.name,
       data: nameAndDimensionArr
     };
-    return finalData;
   }
 }
