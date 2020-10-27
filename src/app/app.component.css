@@ -1,0 +1,31 @@
+* {
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  font-size: 150%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+.head, .body {
+  margin: 5px;
+  padding: 10px;
+}
+
+.head tr, .body td {
+  border: 1px solid grey;
+}
+
+.head th, .body td {
+  text-align: left;
+  font-size: 120%;
+  margin: 0;
+  padding: 20px;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+}

@@ -1,0 +1,33 @@
+<!--the first table does start here-->
+<div class="heading">Table 1</div>
+<table>
+  <tr class="head">
+    <th>
+      Place vs Data
+    </th>
+    <th>
+      Insect District
+    </th>
+  </tr>
+  <tr class="body" *ngFor="let data of displayData">
+    <td>{{ data.name }}</td>
+    <td>{{data.value}}</td>
+  </tr>
+</table>
+
+<!-- the second table starts here-->
+<div class="heading">Table 2</div>
+<table>
+  <tr class="head">
+    <th>
+      Place vs Data
+    </th>
+    <th *ngFor="let data of displayData">
+      {{ data.name }}
+    </th>
+  </tr>
+  <tr class="body">
+    <td>Insect District</td>
+    <td *ngFor="let data of displayData">{{data.value}}</td>
+  </tr>
+</table>
